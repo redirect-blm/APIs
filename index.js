@@ -6,16 +6,16 @@ const app = express();
 
 
 // Database
-// const db = require('./server/db/db_connect');
+const db = require('./server/config/database');
 
 // DB test 
 // db.Authenticate()
 //     .then( () => console.log("connection working!!!"))
 //     .catch(err => console.log(err))
 
-// app.get("/", (req, res) => {
-//     res.send("Redire¢t coming very very Soon!");
-// });
+app.get("/", (req, res) => {
+    res.send("Redire¢t coming very very Soon!");
+});
 
 const port = process.env.PORT || 5000;
 
