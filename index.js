@@ -3,7 +3,25 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const app = express();
-// const db = require("./frontend/src/config/keys").mongoURI;
+
+
+let db = new Sequelize("database", "username", "password", {
+  host: "localhost",
+  dialect: "postgres",
+
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000,
+  },
+
+});
+
+
+// DB test 
+db.Authenticate()
+    .then( () => console.log("connection working!!!"))
+    .catch(err => console.log(err))
 
 app.get("/", (req, res) => {
     res.send("Redire¢t coming very very Soon!");
