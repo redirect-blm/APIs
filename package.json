@@ -1,0 +1,24 @@
+{
+  "name": "apis",
+  "version": "0.0.1",
+  "description": "API enpoints for serving black owned businesses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redirect-blm/APIs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redirect-blm/APIs/issues"
+  },
+  "homepage": "https://github.com/redirect-blm/APIs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "postgres": "^1.0.2",
+    "sequelize": "^5.21.12"
+  }
+}
