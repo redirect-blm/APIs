@@ -5,4 +5,7 @@
 //     title:{
 //         type: Sequalize.STRING
 //     },
+//     title:{
+//         type: Sequalize.STRING
+//     },
 // });

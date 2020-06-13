@@ -1,11 +1,17 @@
 const db = require('./database');
 const {
-    Business
-  } = require('./models/index');
+  Business,
+  Product,
+  ProductOffering,
+  ProductCategory,
+} = require("./models/index");
 
-  module.exports = {
-    db,
-    models: {
-      Business
-    }
-  };
+module.exports = {
+  db,
+  models: {
+    Business,
+    Product,
+    ProductOffering,
+    ProductCategory
+  }
+};
