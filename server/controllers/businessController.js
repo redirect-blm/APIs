@@ -1,6 +1,6 @@
 // const bsService = require('../services/businessServices');
 
-//TODO: any data validation would happen within these classes
+//TODO: any data validation would happen within these functions
 
 const getBusinessList = (request, response) => {
   //   return bsService.getBusinessesService(request, response);
