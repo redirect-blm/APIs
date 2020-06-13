@@ -6,6 +6,8 @@ const {
   ProductCategory,
 } = require("./models/index");
 
+
+
 module.exports = {
   db,
   models: {
