@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const BoycottList = require("../../../db/models/boycottList");
+const BoycottList = require("../../../db/models/boycottLists");
 
 router.get("/test", (req, res) => {
   res.json({ msg: "Testing BoycottList" });
@@ -12,7 +12,7 @@ router.get("/getAll", (req, res) => {
     .catch((err) =>
       res
         .status(404)
-        .json({ noBoycottListFound: "No BoycottList found for this location" })
+        .json({ noBoycottListFound: "No BoycottList found" })
     );
 });
 

@@ -31,17 +31,17 @@ const seed = async () => {
   );
 
   const { boycottList } = boycottListData;
-    const newBoycottList = await Promise.all(
-      boycottList.map((_business) =>
-        BoycottList.create({
-          businessName: _business.businessName,
-          reason: _business.reason,
-          source: _business.source,
-          sourceUrl: _business.sourceUrl,
-          sourceDate: _business.sourceDate,
-        })
-      )
-    );
+  const newBoycottList = await Promise.all(
+    boycottList.map((_business) =>
+      BoycottList.create({
+        businessName: _business.businessName,
+        reason: _business.reason,
+        source: _business.source,
+        sourceUrl: _business.sourceUrl,
+        sourceDate: _business.sourceDate,
+      })
+    )
+  );
 
 };
 

@@ -4,7 +4,8 @@ const {
   Product,
   ProductOffering,
   ProductCategory,
-} = require('./models/index');
+  BoycottList,
+} = require("./models/index");
 
 Product.belongsTo(ProductCategory);
 ProductCategory.hasMany(Product);
@@ -19,5 +20,6 @@ module.exports = {
     Product,
     ProductOffering,
     ProductCategory,
+    BoycottList,
   },
 };

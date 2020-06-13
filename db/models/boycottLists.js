@@ -1,7 +1,6 @@
 const Sequelize = require("sequelize");
 const db = require("../database");
 
-// import your datatypes here
 const { UUID, UUIDV4, STRING, TEXT } = Sequelize;
 
 const BoycottList = db.define("boycottList", {
@@ -15,7 +14,7 @@ const BoycottList = db.define("boycottList", {
     allowNull: false,
   },
   reason: {
-    type: STRING,
+    type: TEXT,
     allowNull: false,
   },
   source: {
