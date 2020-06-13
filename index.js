@@ -1,23 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const Sequelize = require("sequelize");
 
 const app = express();
 
 
-// let db = new Sequelize("database", "username", "password", {
-//   host: "localhost",
-//   dialect: "postgres",
-
-//   pool: {
-//     max: 5,
-//     min: 0,
-//     idle: 10000,
-//   },
-
-// });
-
+// Database
+// const db = require('./server/db/db_connect');
 
 // DB test 
 // db.Authenticate()
