@@ -108,6 +108,20 @@ const data = {
       "Searching for a marketplace to buy African and Caribbean inspired items and finding none, founders Ashley and Lucan decided to create their own – Ebonyx – ‘The marketplace for anything afrocentric’.Partnering with individual brands, you can shop hundreds of sought after items including African inspired fashion, products for textured hair types, Caribbean inspired jewellery, Ankara printed home décor, and much more.You can also sign up with a free account and start earning rewards. Simply refer-a-friend or spend, and begin to redeem rewards including gift cards, electronics, international flights, and more.",
       "Official Black Wall Street",
     ],
+    [
+      "Irie Herbz Apothecary",
+      "Beauty",
+      "http://irieherbzapothecary.com/",
+      "Irie Herbz Apothecary is an online beauty boutique that features luxury cosmetic products and herbal supplements. Visit our website to learn more!",
+      "Official Black Wall Street",
+    ],
+    [
+      "Rema Collections African Shop",
+      "Apparel & Accessories",
+      "https://remacollections.com/",
+      "African Fashion & Accessories store in Bay Area, CA. Come see our rich supply of clothes, shoes, handbags, jewelry, art, healthy & beauty products and more authentic African goods at Rema Collections. Custom made apparel tailored to fit you on your special day or every day clothing. Supply your health cabinet with African Soaps, Lotions, Perfumes. Decorate your home with African Art, Masks, Sculptures & more.",
+      "Official Black Wall Street",
+    ],
   ],
 };
 
