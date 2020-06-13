@@ -21,7 +21,7 @@ router.get("/getAll", (req, res) => {
     );
 });
 
-router.get('/getone/category/:category', async (req, res) => {
+router.get('/getmany/category/:category', async (req, res) => {
     const { type } = req.params;
     try {
       let businessesByCat = await (Business.findAll({ where: { type } }));
