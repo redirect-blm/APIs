@@ -21,6 +21,21 @@ router.get("/getAll", (req, res) => {
     );
 });
 
+router.get('/getone/category/:category', async (req, res) => {
+    const { type } = req.params;
+    try {
+      let businessesByCat = await (Business.findAll({ where: { type } }));
+      if (!businesses) businesses = await (Business.findAll());
+      return res.status(200).send(businesses)
+    } catch(e) {
+        console.log('ERROR getting businesses by category');
+        console.log(e)
+        return res.status(400).send(e);
+    }
+    
+    
+})
+
 
 // router.get("/getBusiness/:id", (req, res) => {});
 // router.get("/addBusiness", (req, res) => {});

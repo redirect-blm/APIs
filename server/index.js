@@ -13,6 +13,9 @@ app.get('/', (_request, response) => {
   response.json({ info: 'Redirect API - Node.js, Express, and Postgres API' });
 });
 
+app.use("/api/businesses", businesses);
+app.use("/api/categories", categories);
+
 
 // Start DB before starting server
 startDb().then(() => {
@@ -20,6 +23,3 @@ startDb().then(() => {
     console.log(`App running on port ${port}.`);
   });
 });
-
-app.use("/api/businesses", businesses);
-app.use("/api/categories", categories);
