@@ -10,10 +10,18 @@ const Product = db.define("product", {
     type: UUID,
     defaultValue: UUIDV4,
   },
+  productName: {
+    type: STRING,
+    allowNull: false,
+  },
   productType: {
-      type: STRING,
-      allowNull: false,
-  }
+    type: STRING,
+    allowNull: false,
+  },
+  category: {
+    type: STRING,
+    allowNull: false,
+  },
 });
 
 module.exports = Product;

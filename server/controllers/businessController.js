@@ -2,6 +2,12 @@
 
 //TODO: any data validation would happen within these functions
 
+
+const getCategories = (request, response, next) => {
+  //return bsService.getBusinessesService(request, response);
+  response.send("categories will come here");
+};
+
 const getBusinessList = (request, response, next) => {
   //return bsService.getBusinessesService(request, response);
   //response.send('Test');
@@ -29,4 +35,5 @@ module.exports = {
   addBusiness,
   updateBusiness,
   deleteBusiness,
+  getCategories,
 };

@@ -9,7 +9,7 @@ const {
 Product.belongsTo(ProductCategory);
 ProductCategory.hasMany(Product);
 
-Product.belongsToMany(Business, through: { ProductOffering });
+Product.belongsToMany(Business, {through: "ProductOffering" });
 Business.hasMany(Product);
 
 module.exports = {

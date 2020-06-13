@@ -1,10 +1,12 @@
 const {
-  db,
   Business,
   Product,
   ProductCategory,
   ProductOffering,
-} = require('../db');
+} = require('../db/models');
+
+const { db } = require('../db');
+ 
 const { data } = require('./staticData');
 
 const seed = async () => {
@@ -12,6 +14,22 @@ const seed = async () => {
   const newCategories = await Promise.all(
     categories.map((_c) => ProductCategory.create({ categoryName: _c }))
   );
+
+  const { businesses } = data;
+  const newBusiness = await Promise.all(
+    businesses.map((_business) =>
+      Business.create({
+        businessName: _business[0],
+        type: _business[1],
+        website: _business[2],
+        description: _business[3],
+        source: _business[4],
+      })
+    )
+  );
+
+
+
 };
 
 const startDb = () => {

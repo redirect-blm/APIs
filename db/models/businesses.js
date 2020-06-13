@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../database');
 
 // import your datatypes here
-const { UUID, UUIDV4, STRING } = Sequelize;
+const { UUID, UUIDV4, STRING, TEXT } = Sequelize;
 
 
 const Business = db.define("business", {
@@ -20,12 +20,16 @@ const Business = db.define("business", {
     type: STRING,
     allowNull: false,
   },
-  description: {
+  website: {
     type: STRING,
-    validate: {
-      len: [0,500],
-      notNull: true
-    }, 
+    allowNull: true,
+  },
+  description: {
+    type: TEXT,
+    // validate: {
+    //   len: [0, 600],
+    // },
+    allowNull: false,
   },
   source: {
     type: STRING,
