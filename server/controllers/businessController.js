@@ -2,23 +2,24 @@
 
 //TODO: any data validation would happen within these classes
 
-const getBusinessList = (request, response) => {
-  //   return bsService.getBusinessesService(request, response);
+const getBusinessList = (request, response, next) => {
+  //return bsService.getBusinessesService(request, response);
+  //response.send('Test');
 };
 
-const getBusinessById = (request, response) => {
+const getBusinessById = (request, response, next) => {
   //   return bsService.getBusinessByIdService(request, response);
 };
 
-const addBusiness = (request, response) => {
+const addBusiness = (request, response, next) => {
   //   return bsService.createBusinessService(request, response);
 };
 
-const updateBusiness = (request, response) => {
+const updateBusiness = (request, response, next) => {
   //   return bsService.updateBusinessService(request, response);
 };
 
-const deleteBusiness = (request, response) => {
+const deleteBusiness = (request, response, next) => {
   //   return bsService.deleteBusinessService(request, response);
 };
 

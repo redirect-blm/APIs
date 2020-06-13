@@ -2,12 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
 app.get('/', (_request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' });
+  response.json({ info: 'Redirect API - Node.js, Express, and Postgres API' });
 });
 
 app.use('/api', routes);
