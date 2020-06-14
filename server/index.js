@@ -6,6 +6,7 @@ const { startDb } = require('./utils');
 
 const businesses = require("./routes/api/businesses");
 const categories = require("./routes/api/categories");
+const boycottList = require("./routes/api/boycottList");
 
 app.use(bodyParser.json());
 
@@ -23,3 +24,4 @@ startDb().then(() => {
 
 app.use("/api/businesses", businesses);
 app.use("/api/categories", categories);
+app.use("/api/boycottList", boycottList);
