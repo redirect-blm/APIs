@@ -35,6 +35,14 @@ const Business = db.define("business", {
     type: STRING,
     allowNull: true,
   },
+  category: {
+    type: STRING,
+    allowNull: true,
+  },
+  shortDescription: {
+    type: STRING,
+    allowNull: true,
+  },
 });
 
 module.exports = Business;

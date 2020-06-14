@@ -26,6 +26,8 @@ const seed = async () => {
         website: _business[2],
         description: _business[3],
         source: _business[4],
+        category: _business[5],
+        shortDescription: _business[6],
       })
     )
   );
