@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Business = require('../../../db/models/businesses');
 
-router.get("/test", (req, res) => {
-    res.json({ msg: "Welcome to businessess" });
+router.get('/test', (req, res) => {
+  res.json({ msg: 'Welcome to businessess' });
 });
 
 router.get("/getAll", (req, res) => {
@@ -38,6 +38,7 @@ router.get("/getByCategory/:category", (req, res) => {
         .json({ noBusinessesFound: "No Businesses found under this category" })
     );
 });
+
 
 // router.get("/addBusiness", (req, res) => {});
 // router.get("/updateBusiness", (req, res) => {});
