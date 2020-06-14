@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Credentials', true);
-  response.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8887');
+  response.header('Access-Control-Allow-Origin', '*');
   response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
   response.header(
     'Access-Control-Allow-Headers',
