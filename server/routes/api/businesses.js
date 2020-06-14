@@ -24,7 +24,16 @@ router.get("/getAll", (req, res) => {
 });
 
 
-// router.get("/getBusiness/:id", (req, res) => {});
+router.get("/:id", (req, res) => {
+    Business.findAll({
+      where: {
+        id: req.params.id,
+      },
+    }).then((Businesses) => res.json(Businesses))
+      .catch((err) =>
+        res.status(404).json({ noBusinessesFound: "No Businesses foundin DB" })
+      );
+});
 // router.get("/addBusiness", (req, res) => {});
 // router.get("/updateBusiness", (req, res) => {});
 // router.get("/deleteBusiness", (req, res) => {});
