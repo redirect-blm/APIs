@@ -1,3 +1,5 @@
+//TODO: any data validation would happen within the routes
+
 const express = require("express");
 const router = express.Router();
 const Business = require('../../../db/models/businesses');

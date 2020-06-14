@@ -3,11 +3,13 @@ const {
   Product,
   ProductCategory,
   ProductOffering,
-} = require('../db/models');
+  BoycottList,
+} = require("../db/models");
 
 const { db } = require('../db');
  
 const { data } = require('./staticData');
+const { boycottListData } = require("./boycottList");
 
 const seed = async () => {
   const { categories } = data;
@@ -28,7 +30,18 @@ const seed = async () => {
     )
   );
 
-
+  const { boycottList } = boycottListData;
+  const newBoycottList = await Promise.all(
+    boycottList.map((_business) =>
+      BoycottList.create({
+        businessName: _business.businessName,
+        reason: _business.reason,
+        source: _business.source,
+        sourceUrl: _business.sourceUrl,
+        sourceDate: _business.sourceDate,
+      })
+    )
+  );
 
 };
 
