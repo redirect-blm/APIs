@@ -26,17 +26,6 @@ router.get("/getThree", (req, res) => {
     );
 });
 
-router.post("/getOne", (req, res) => {
-  const name = req.body.businessName;
-  BoycottList.findAll({
-    where: { businessName: req.body.businessName },
-  })
-    .then((boycottList) => res.json(boycottList))
-    .catch((err) =>
-      // res.status(404).json({ companyStatus: "This company is not boycotted" })
-      res.status(403).json({ companyStatus: name })
-    );
-});
 
 router.get("/getByName/:businessName", (req, res) => {
   BoycottList.findAll({

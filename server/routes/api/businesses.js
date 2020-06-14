@@ -1,5 +1,3 @@
-//TODO: any data validation would happen within the routes
-
 const express = require("express");
 const router = express.Router();
 const Business = require('../../../db/models/businesses');
@@ -29,14 +27,15 @@ router.get("/getThree", (req, res) => {
 });
 
 
-router.post("/byCategory", (req, res) => {
+router.get("/getByCategory/:category", (req, res) => {
   Business.findAll({
-    where: {
-      type: req.body.category,
-    },
-  }).then((Businesses) => res.json(Businesses))
+    where: { category: req.params.category },
+  })
+    .then((Businesses) => res.json(Businesses))
     .catch((err) =>
-      res.status(404).json({ noBusinessesFound: "No Businesses found in the DB" })
+      res
+        .status(404)
+        .json({ noBusinessesFound: "No Businesses found under this category" })
     );
 });
 
