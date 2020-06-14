@@ -16,4 +16,17 @@ router.get("/getAll", (req, res) => {
     );
 });
 
+router.get("/getOne", (req, res) => {
+  BoycottList.findAll({
+    where: {
+      businessName: req.body.businessName,
+    },
+  })
+    .then((boycottList) => res.json(boycottList))
+    .catch((err) =>
+      // res.status(404).json({ companyStatus: "This company is not boycotted" })
+      res.status(404).json({ companyStatus: req.body.name })
+    );
+});
+
 module.exports = router;
