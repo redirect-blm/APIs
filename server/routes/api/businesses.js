@@ -8,32 +8,38 @@ router.get("/test", (req, res) => {
     res.json({ msg: "Welcome to businessess" });
 });
 
-router.get("/test2", (req, res) => {
-    res.json({ msg: "Another route" });
+router.get("/getAll", (req, res) => {
+  Business.findAll()
+      .then((Businesses) => res.json(Businesses))
+      .catch((err) =>
+          res
+          .status(404)
+          .json({ noBusinessesFound: "No Businesses found in the DB" })
+  );
 });
 
-router.get("/getAll", (req, res) => {
-    // res.json({ msg: "All businesses" });
-    Business.findAll()
-        .then((Businesses) => res.json(Businesses))
-        .catch((err) =>
-            res
-            .status(404)
-            .json({ noBusinessesFound: "No Businesses foundin DB" })
+router.get("/getThree", (req, res) => {
+  Business.findAll({limit: 3})
+    .then((Businesses) => res.json(Businesses))
+    .catch((err) =>
+      res
+        .status(404)
+        .json({ noBusinessesFound: "No Businesses found in the DB" })
     );
 });
 
 
-router.get("/:id", (req, res) => {
-    Business.findAll({
-      where: {
-        id: req.params.id,
-      },
-    }).then((Businesses) => res.json(Businesses))
-      .catch((err) =>
-        res.status(404).json({ noBusinessesFound: "No Businesses foundin DB" })
-      );
+router.post("/byCategory", (req, res) => {
+  Business.findAll({
+    where: {
+      type: req.body.category,
+    },
+  }).then((Businesses) => res.json(Businesses))
+    .catch((err) =>
+      res.status(404).json({ noBusinessesFound: "No Businesses found in the DB" })
+    );
 });
+
 // router.get("/addBusiness", (req, res) => {});
 // router.get("/updateBusiness", (req, res) => {});
 // router.get("/deleteBusiness", (req, res) => {});

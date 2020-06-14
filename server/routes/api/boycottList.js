@@ -16,16 +16,36 @@ router.get("/getAll", (req, res) => {
     );
 });
 
-router.get("/getOne", (req, res) => {
+router.get("/getThree", (req, res) => {
+  BoycottList.findAll(
+    {limit: 3}
+  )
+    .then((boycottList) => res.json(boycottList))
+    .catch((err) =>
+      res.status(404).json({ noBoycottListFound: "No BoycottList found" })
+    );
+});
+
+router.post("/getOne", (req, res) => {
+  const name = req.body.businessName;
   BoycottList.findAll({
-    where: {
-      businessName: req.body.businessName,
-    },
+    where: { businessName: req.body.businessName },
   })
     .then((boycottList) => res.json(boycottList))
     .catch((err) =>
       // res.status(404).json({ companyStatus: "This company is not boycotted" })
-      res.status(404).json({ companyStatus: req.body.name })
+      res.status(403).json({ companyStatus: name })
+    );
+});
+
+router.get("/getByName/:businessName", (req, res) => {
+  BoycottList.findAll({
+    where: { businessName: req.params.businessName },
+  })
+    .then((boycottList) => res.json(boycottList))
+    .catch((err) =>
+      // res.status(404).json({ companyStatus: "This company is not boycotted" })
+      res.status(404).json({ companyStatus: req.body.businessName })
     );
 });
 
