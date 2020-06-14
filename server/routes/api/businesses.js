@@ -26,7 +26,7 @@ router.get('/getThree', (req, res) => {
     );
 });
 
-router.get('/getByCategory', (req, res) => {
+router.get('/getByCategory/:category', (req, res) => {
   Business.findAll({
     where: { category: req.params.category },
   })
