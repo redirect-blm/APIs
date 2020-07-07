@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Business = require('../../../db/models/businesses');
+const Business = require('../../db/models/businesses');
 
 router.get('/test', (req, res) => {
   res.json({ msg: 'Welcome to businessess' });

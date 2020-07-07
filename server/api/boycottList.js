@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const BoycottList = require("../../../db/models/boycottLists");
+const BoycottList = require("../../db/models/boycottLists");
 
 router.get("/test", (req, res) => {
   res.json({ msg: "Testing BoycottList" });
