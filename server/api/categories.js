@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const ProductCategory = require("../../../db/models/productCategories");
+const ProductCategory = require("../../db/models/productCategories");
 
 router.get("/test", (req, res) => {
   res.json({ msg: "Welcome to categories" });
