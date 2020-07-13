@@ -1,8 +1,11 @@
-// This is the standard databse declaration for Mac OS. Not that this will break in Windows OS, where password is required
-// You will need to create a postgreSQL database on your local machine named redirect
+// If you're using Windows OS in development, you need to save your postgres username and password in your local .env file before starting the app
 const Sequelize = require('sequelize');
-const db = new Sequelize(
-  process.env.DATABASE_URL || 'postgres://localhost:5432/redirect',
+const dotenv = require('dotenv').config().parsed;
+const platform = process.env.PLATFORM ? process.env.PLATFORM.trim() : null
+const connectionString = platform === 'windows' ? `postgres://${dotenv.PSQL_USER}:${dotenv.PSQL_PW}@127.0.0.1:5432/twitchtrivia` : `postgres://localhost:5432/twitchtrivia`;
+const dbUrl =
+process.env.DATABASE_URL || connectionString;
+const db = new Sequelize(dbUrl,
   {
     logging: false,
   }

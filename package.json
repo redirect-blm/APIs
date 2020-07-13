@@ -8,6 +8,8 @@
     "start": "nodemon server/index.js",
     "start-nodb-mc": "SET MODE=nodatabase && SET PLATFORM=windows && nodemon server/index.js",
     "start-nodb-mac": "MODE=nodatabase && nodemon server/index.js",
+    "start-dev": "MODE=database && NODE_ENV=development npm run start-server",
+    "start-dev-mc": "SET MODE=database && SET NODE_ENV=development && SET PLATFORM=windows && npm run start",
     "build": "npm i"
   },
   "repository": {
