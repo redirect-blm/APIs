@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
     "start-nodb-mc": "SET MODE=nodatabase && SET PLATFORM=windows && nodemon server/index.js",
-    "start-nodb-mac": "MODE=nodatabase && nodemon server/index.js"
+    "start-nodb-mac": "MODE=nodatabase && nodemon server/index.js",
+    "build": "npm i"
   },
   "repository": {
     "type": "git",

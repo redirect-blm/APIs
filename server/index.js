@@ -2,11 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3001;
-const { startDb } = require('./utils');
+const { startDb, logRequest } = require('./utils');
 
 app.use(bodyParser.json());
 
 app.use((request, response, next) => {
+  logRequest(request);
   response.header('Access-Control-Allow-Credentials', true);
   response.header('Access-Control-Allow-Origin', '*');
   response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
@@ -38,5 +39,3 @@ if (process.env.MODE.trim() == 'nodatabase') {
     });
   });
 }
-
-
