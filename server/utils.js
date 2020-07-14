@@ -64,7 +64,16 @@ const startDb = () => {
     });
 };
 
+const logRequest = (request) => {
+  const { method, url, body, params } = request;
+  console.log(
+    `received ${method} request at ${url} with body = ${JSON.stringify(body)}\nparams = ${JSON.stringify(params)}`
+  );
+};
+
+
 module.exports = {
   seed,
   startDb,
+  logRequest
 };
