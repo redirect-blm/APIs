@@ -2,12 +2,30 @@
 const Sequelize = require('sequelize');
 const dotenv = require('dotenv').config().parsed;
 const platform = process.env.PLATFORM ? process.env.PLATFORM.trim() : null
-const connectionString = platform === 'windows' ? `postgres://${dotenv.PSQL_USER}:${dotenv.PSQL_PW}@127.0.0.1:5432/twitchtrivia` : `postgres://localhost:5432/twitchtrivia`;
+
+/***** 2 DATABSE CONNECTION OPTIONS *****/
+//1 
+   // USE THIS FOR CONNECTING TO YOU LOCAL VERSION OF THE DB
+   // const localConnectionString = platform === 'windows' ? `postgres://${dotenv.PSQL_USER}:${dotenv.PSQL_PW}@127.0.0.1:5432/twitchtrivia` : `postgres://localhost:5432/twitchtrivia`;
+
+//2
+   // USE THIS FOR CONNECTING TO THE PRODUCTION DB IN HEROKU
+   const herokuConnectionString = `postgres://${dotenv.DB_USER}:${dotenv.DB_PW}@${dotenv.DB_HOST}:${dotenv.DB_PORT}/${dotenv.DB_NAME}`
+
+/******* *******/
+
 const dbUrl =
-process.env.DATABASE_URL || connectionString;
+process.env.DATABASE_URL || herokuConnectionString;
 const db = new Sequelize(dbUrl,
   {
     logging: false,
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    },
   }
 );
 
