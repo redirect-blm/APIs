@@ -27,10 +27,14 @@ router.get('/getThree', (req, res) => {
 });
 
 router.get('/getByCategory/:category', (req, res) => {
+  console.log('finding businesses by category');
   Business.findAll({
     where: { category: req.params.category },
   })
-    .then((Businesses) => res.json(Businesses))
+    .then((Businesses) => {
+      console.log(Businesses)
+      return res.json(Businesses)
+    })
     .catch((err) =>
       res
         .status(404)

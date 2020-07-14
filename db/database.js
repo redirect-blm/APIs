@@ -6,7 +6,7 @@ const dotenv = require('dotenv').config().parsed;
 //1 
    // USE THIS FOR CONNECTING TO YOU LOCAL VERSION OF THE DB
    // const platform = process.env.PLATFORM ? process.env.PLATFORM.trim() : null
-   // const localConnectionString = platform === 'windows' ? `postgres://${dotenv.PSQL_USER}:${dotenv.PSQL_PW}@127.0.0.1:5432/twitchtrivia` : `postgres://localhost:5432/twitchtrivia`;
+   // const localConnectionString = platform === 'windows' ? `postgres://${dotenv.PSQL_USER}:${dotenv.PSQL_PW}@127.0.0.1:5432/redirect` : `postgres://localhost:5432/redirect`;
 
 //2
    // USE THIS FOR CONNECTING TO THE PRODUCTION DB IN HEROKU
