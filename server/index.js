@@ -28,7 +28,7 @@ app.get('/', (_request, response) => {
   response.json({ info: 'Redirect API - Node.js, Express, and Postgres API' });
 });
 
-if (process.env.MODE.trim() === 'nodatabase') {
+if (process.env.MODE && process.env.MODE.trim() === 'nodatabase') {
   app.listen(port, () => {
     console.log(`App running on port ${port} without database.`);
   });
