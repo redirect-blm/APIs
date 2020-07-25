@@ -33,7 +33,9 @@ if (process.env.MODE.trim() === 'nodatabase') {
     console.log(`App running on port ${port} without database.`);
   });
 } else {
+  console.log('starting database')
   startDb().then(() => {
+    console.log('database started')
     app.listen(port, () => {
       console.log(`App running on port ${port}.`);
     });
