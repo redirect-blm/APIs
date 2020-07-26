@@ -8,8 +8,8 @@ router.get('/test', (req, res) => {
 
 router.get('/getAll', (req, res) => {
   Business.findAll()
-    .then((Businesses) => res.json(Businesses))
-    .catch((err) =>
+    .then(Businesses => res.json(Businesses))
+    .catch(err =>
       res
         .status(404)
         .json({ noBusinessesFound: 'No Businesses found in the DB' })
@@ -18,8 +18,8 @@ router.get('/getAll', (req, res) => {
 
 router.get('/getThree', (req, res) => {
   Business.findAll({ limit: 3 })
-    .then((Businesses) => res.json(Businesses))
-    .catch((err) =>
+    .then(Businesses => res.json(Businesses))
+    .catch(err =>
       res
         .status(404)
         .json({ noBusinessesFound: 'No Businesses found in the DB' })
@@ -30,12 +30,13 @@ router.get('/getByCategory/:category', (req, res) => {
   console.log('finding businesses by category');
   Business.findAll({
     where: { category: req.params.category },
+    limit: 3,
   })
-    .then((Businesses) => {
-      console.log(Businesses)
-      return res.json(Businesses)
+    .then(Businesses => {
+      console.log(Businesses);
+      return res.json(Businesses);
     })
-    .catch((err) =>
+    .catch(err =>
       res
         .status(404)
         .json({ noBusinessesFound: 'No Businesses found under this category' })
