@@ -10,7 +10,7 @@ const dotenv = require('dotenv').config().parsed;
 
 //2
    // USE THIS FOR CONNECTING TO THE PRODUCTION DB IN HEROKU
-   const herokuConnectionString = `postgres://${dotenv.DB_USER}:${dotenv.DB_PW}@${dotenv.DB_HOST}:${dotenv.DB_PORT}/${dotenv.DB_NAME}`
+   const herokuConnectionString = dotenv && `postgres://${dotenv.DB_USER}:${dotenv.DB_PW}@${dotenv.DB_HOST}:${dotenv.DB_PORT}/${dotenv.DB_NAME}`
 
 /******* *******/
 
