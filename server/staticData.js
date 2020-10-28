@@ -9,7 +9,7 @@ const data = {
     "Beauty & Personal Care",
     "CDs & Vinyl",
     "Cell Phones & Accessories",
-    "Clothing, Shoes & Jewelery",
+    "Clothing, Shoes & Jewelry",
     "Under $10",
     "Collectibles & Fine Art",
     "Computers",
@@ -52,7 +52,7 @@ const data = {
       "www.theadvocatestee.com",
       "The Advocates is a social awareness brand that provides a wearable platform for your truth to be heard.",
       "Official Black Wall Street",
-      "Clothing, Shoes & Jewelery",
+      "Clothing, Shoes & Jewelry",
       "Social justice T-shirts ",
     ],
     [
@@ -61,7 +61,7 @@ const data = {
       "http://www.brilliantlydesignedllc.com/",
       "Brilliantly Designed LLC makes custom products for you. Check out the website or send a message about what we can make for you.",
       "Official Black Wall Street",
-      "Clothing, Shoes & Jewelery",
+      "Clothing, Shoes & Jewelry",
       "Tees celebrating the Black experience",
     ],
     [
@@ -91,7 +91,7 @@ const data = {
       "http://www.blk-ed.com/",
       "Blk-ed is a new and ground breaking company based іn Canada/USA. Our mіѕѕіоn is to develop products that truly reflect the beauty, pride and strength of our people. One of our main gоаls аt Blk-еd is tо provide beautifully designed products with images that resonate with our communities at first sight. Some of the products include school bags for children leather wallets for him and her, tote bags and much more.",
       "Official Black Wall Street",
-      "Clothing, Shoes & Jewelery",
+      "Clothing, Shoes & Jewelry",
       "Afrocentric bags and accessories",
     ],
     [
@@ -100,7 +100,7 @@ const data = {
       "https://iamunique.me/",
       "Handmade jewelry and accessories that are one of a kind. Beautiful colorful, statement pieces that can bring out your personality. Custom orders accepted.",
       "jewelry mystery box",
-      "Clothing, Shoes & Jewelery",
+      "Clothing, Shoes & Jewelry",
       "Handmade jewelry and accessories",
     ],
     [
